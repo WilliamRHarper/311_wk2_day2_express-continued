@@ -15,7 +15,14 @@ const show = (req, res) => {
 const create = (req, res) => {
   const newVehicle = {
     _id: vehicleCount + 1,
+    imgUrl: `./featured-img-${Math.ceil(Math.random() * 3)}.jpg`,
     ...req.body,
+    price: Math.floor(Math.random() * 10000),
+    km: Math.floor(Math.random() * 100000),
+    miles: Math.floor(Math.random() * 100000),
+    fuel: "Gas",
+    city: "Austin",
+    isNew: false, 
   };
 
   vehicles.push(newVehicle);
