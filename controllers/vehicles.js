@@ -19,11 +19,12 @@ const create = (req, res) => {
     ...req.body,
     price: Math.floor(Math.random() * 10000),
     km: Math.floor(Math.random() * 100000),
-    miles: Math.floor(Math.random() * 100000),
+    miles: null,
     fuel: "Gas",
     city: "Austin",
-    isNew: false, 
+    isNew: false,
   };
+  newVehicle["miles"] = Math.floor(newVehicle.km * 0.62137);
 
   vehicles.push(newVehicle);
   res.json(newVehicle);
